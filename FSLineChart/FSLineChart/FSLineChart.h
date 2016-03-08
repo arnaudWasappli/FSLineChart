@@ -76,7 +76,8 @@ typedef NS_ENUM(NSInteger, ValueLabelPositionType) {
 
 // Grid parameters
 @property (nonatomic) BOOL drawInnerGrid;
-@property (nonatomic, strong) UIColor* innerGridColor;
+@property (nonatomic, strong) UIColor* innerVerticalGridColor;
+@property (nonatomic, strong) UIColor* innerHorizontalGridColor;
 @property (nonatomic) CGFloat innerGridLineWidth;
 
 // Smoothing

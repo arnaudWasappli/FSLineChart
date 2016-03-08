@@ -79,7 +79,8 @@
     _axisWidth = self.frame.size.width - 2 * _margin;
     _axisHeight = self.frame.size.height - 2 * _margin;
     _axisColor = [UIColor colorWithWhite:0.7 alpha:1.0];
-    _innerGridColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    _innerVerticalGridColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    _innerHorizontalGridColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     _drawInnerGrid = YES;
     _bezierSmoothing = YES;
     _bezierSmoothingTension = 0.2;
@@ -278,7 +279,7 @@
     // draw grid
     if(_drawInnerGrid) {
         for(int i=0;i<_horizontalGridStep;i++) {
-            CGContextSetStrokeColorWithColor(ctx, [_innerGridColor CGColor]);
+            CGContextSetStrokeColorWithColor(ctx, [_innerHorizontalGridColor CGColor]);
             CGContextSetLineWidth(ctx, _innerGridLineWidth);
             
             CGPoint point = CGPointMake((1 + i) * _axisWidth / _horizontalGridStep * scale + _margin, _margin);
@@ -302,7 +303,7 @@
                 CGContextSetLineWidth(ctx, _axisLineWidth);
                 CGContextSetStrokeColorWithColor(ctx, [_axisColor CGColor]);
             } else {
-                CGContextSetStrokeColorWithColor(ctx, [_innerGridColor CGColor]);
+                CGContextSetStrokeColorWithColor(ctx, [_innerVerticalGridColor CGColor]);
                 CGContextSetLineWidth(ctx, _innerGridLineWidth);
             }
             
